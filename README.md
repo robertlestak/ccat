@@ -1,11 +1,28 @@
 # ccat
 
-ccat (curl-cat) `cat`s the contents of the provided file(s) to `stdout`, and if the provided path is a remote URL, it tries to HTTP `GET` the file contents.
+ccat (curl-cat) `cat`s the contents of the provided file(s) to `stdout`, and if the provided path is a remote URL, it HTTP `GET`s the file contents.
+
+## Build
+
+````
+go build .
+cp ccat /usr/local/bin/ccat
+````
 
 ## Usage
 
 ````
-ccat [file/url ...]
+ccat [options] [file/url ...]
+  -H value
+    	Headers to send when requesting remote resources
+  -b string
+    	Body to send when requesting remote resources
+  -c value
+    	Cookies to send when requesting remote resources
+  -m string
+    	Method when requesting remote resources (default "GET")
+  -u string
+    	Basic auth to send when requesting remote resources
 ````
 
 ### Example
